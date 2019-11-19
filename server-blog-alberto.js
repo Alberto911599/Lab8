@@ -20,7 +20,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.get('https://fierce-mountain-90125.herokuapp.com/blog-posts', ( req, res, next ) => {
+app.get('/blog-posts', ( req, res, next ) => {
     console.log("getting");
 	BlogList.get()
 		.then( blogs => {
@@ -35,7 +35,7 @@ app.get('https://fierce-mountain-90125.herokuapp.com/blog-posts', ( req, res, ne
 		});
 });
 
-app.post('https://fierce-mountain-90125.herokuapp.com/blog-posts', jsonParser, (req, res) => {
+app.post('/blog-posts', jsonParser, (req, res) => {
     console.log("posting");
     let title = req.body.title;
     let author = req.body.author;
@@ -71,7 +71,7 @@ app.post('https://fierce-mountain-90125.herokuapp.com/blog-posts', jsonParser, (
         });
 });
 
-app.put('https://fierce-mountain-90125.herokuapp.com/blog-posts/:id', jsonParser, (req, res, next) => {
+app.put('/blog-posts/:id', jsonParser, (req, res, next) => {
     let filterID = req.params.id;
     if(!filterID || !req.body){
         res.statusMessage = "Missing field id";
@@ -93,7 +93,7 @@ app.put('https://fierce-mountain-90125.herokuapp.com/blog-posts/:id', jsonParser
        });
 });
 
-app.delete('https://fierce-mountain-90125.herokuapp.com/blog-posts/:id', (req, res) => {
+app.delete('blog-posts/:id', (req, res) => {
     let filterID = req.params.id;
     if(!filterID){
         res.statusMessage = "Missing field id";
@@ -127,7 +127,6 @@ function runServer(port, databaseUrl){
     else{
         server = app.listen(port, () => {
         console.log( "App is running on port " + port );
-        console.log("here");
         resolve();
     })
         .on( 'error', err => {

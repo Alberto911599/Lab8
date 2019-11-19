@@ -1,4 +1,4 @@
-let url = '/blog-posts';
+let url = 'https://fierce-mountain-90125.herokuapp.com/blog-posts';
 
     // let settings = {
     //     method: 'GET'
@@ -80,6 +80,7 @@ function getAllBlogs(){
         dataType : "json", //Returned type od the response
         ContentType : "application/json", //Type of sent data in the request (optional)
         success : function(responseJSON){
+            console.log("success");
             $(".listOfBlogs").empty();
             for(let i = 0; i < responseJSON.length; i++){
                 $(".listOfBlogs").append(`<li>  <p>id = ${responseJSON[i].id}</p>
