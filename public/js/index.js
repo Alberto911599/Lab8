@@ -1,4 +1,4 @@
-let url = 'http://localhost:8080/blog-posts';
+let url = 'https://fierce-mountain-90125.herokuapp.com/blog-posts';
 
     // let settings = {
     //     method: 'GET'
