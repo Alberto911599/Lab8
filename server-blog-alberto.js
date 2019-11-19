@@ -20,7 +20,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.get( '/blog-posts', ( req, res, next ) => {
+app.get('/blog-posts', ( req, res, next ) => {
 	BlogList.get()
 		.then( blogs => {
 			return res.status( 200 ).json( blogs );
@@ -35,7 +35,8 @@ app.get( '/blog-posts', ( req, res, next ) => {
 });
 
 app.post('/blog-posts', jsonParser, (req, res, next) => {
-     let {title, content, author, date, id} = req.body;
+     let {title, content, author, publishDate, id} = req.body;
+     console.log(req.body);
      if(!title || !content || !id){
          res.statusMessage = "Missing field in body";
          return res.status(406).json({
@@ -47,7 +48,7 @@ app.post('/blog-posts', jsonParser, (req, res, next) => {
          title,
          content,
          author,
-         date,
+         publishDate,
          id
      };
      BlogList.post(newBlog)
@@ -133,16 +134,15 @@ function runServer(port, databaseUrl){
 function closeServer(){
     return mongoose.disconnect()
             .then(() => {
-return new Promise((resolve, reject) => {
-console.log('Closing the server');
-server.close( err => {
-if (err){
-    return reject(err);
-    }
-    else{
-    resolve();
-    }
-    });
+    return new Promise((resolve, reject) => {
+    console.log('Closing the server');
+    server.close( err => {
+        if (err){
+            return reject(err);
+        }
+        else{
+            resolve();
+        }});
     });
     });
    }
