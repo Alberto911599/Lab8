@@ -1,4 +1,4 @@
-let url = 'https://fierce-mountain-90125.herokuapp.com/blog-posts';
+let url = '/blog-posts';
 
     // let settings = {
     //     method: 'GET'
@@ -131,6 +131,10 @@ function postNewBlog(newBlog){
         contentType: "application/json; charset=utf-8",
         success : function(result){
             getAllBlogs();
+        },
+        error : function(err){
+            console.log(err);
+            console.log("error");
         }
     });
 }
