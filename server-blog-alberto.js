@@ -34,8 +34,12 @@ app.get('/blog-posts', ( req, res, next ) => {
 		});
 });
 
-app.post('/blog-posts', jsonParser, (req, res, next) => {
-     let {title, content, author, publishDate, id} = req.body;
+app.post('/blog-posts', jsonParser, (req, res) => {
+    console.log("posting");
+    let title = req.body.title;
+    let author = req.body.author;
+    let content = req.body.content;
+    let publishDate = req.body.publishDate;
      console.log(title);
      console.log(content);
      console.log(id);
