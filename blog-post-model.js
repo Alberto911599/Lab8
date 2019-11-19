@@ -13,6 +13,7 @@ let Blog = mongoose.model('Blog', blogSchema);
 
 let BlogList = {
     get : function(){
+        console.log("getting in model");
 		return Blog.find()
 				.then( blogs => {
 					return blogs;

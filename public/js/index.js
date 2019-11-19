@@ -65,6 +65,7 @@ function init(){
     });
     $("#btnLoadAll").on("click", function(e){
         e.preventDefault();
+        console.log("Load All");
         getAllBlogs();
     });
 }
