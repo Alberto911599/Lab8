@@ -36,7 +36,7 @@ app.get( '/blog-posts', ( req, res, next ) => {
 
 app.post('/blog-posts', jsonParser, (req, res, next) => {
      let {title, content, author, date, id} = req.body;
-     if(!title || !content || !date || !id){
+     if(!title || !content || !id){
          res.statusMessage = "Missing field in body";
          return res.status(406).json({
             "error" : "Missing field",
