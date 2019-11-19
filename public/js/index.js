@@ -71,7 +71,6 @@ function init(){
 }
 
 function getAllBlogs(){
-    console.log("get all blogs");
     $.ajax({
         url:(url + "/blog-posts"), //url/endpointToAPI,
         method: "GET", 
@@ -99,7 +98,7 @@ function getAllBlogs(){
 
 function getBlogsByAuthor(author){
     $.ajax({
-        url:(url + '?author=' + author), //url/endpointToAPI,
+        url:(url + '/blog-posts/' + author), //url/endpointToAPI,
         method: "GET", 
         data: {}, //Info sent to the API
         dataType : "json", //Returned type od the response
@@ -143,7 +142,7 @@ function postNewBlog(newBlog){
 function deleteById(tempId){
     console.log(tempId);
     $.ajax({
-        url:(url + '/' + tempId), //url/endpointToAPI,
+        url:(url + '/blog-posts/' + tempId), //url/endpointToAPI,
         type: "DELETE",
         success : function(res){
             console.log('success on deleting');
