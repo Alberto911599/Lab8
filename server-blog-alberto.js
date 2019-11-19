@@ -64,9 +64,9 @@ app.post('/blog-posts', jsonParser, (req, res) => {
         })
         .catch(err => {
             res.statusMessage = "Something went wrong";
-            return res.status(500).json({
+            return res.status(501).json({
                 "error" : "Something went wrong with the data base",
-                "status" : 500
+                "status" : 501
             });
         });
 });
@@ -102,7 +102,7 @@ app.delete('/blog-posts/:id', (req, res) => {
            "status" : 406
        });
     }
-    BlogList.deleteOne({ id : filterID })
+    BlogList.delete({ id : filterID })
        .then(blog => {
            res.status(201).json(blog);
        })
