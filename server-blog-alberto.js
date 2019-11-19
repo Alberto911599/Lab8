@@ -21,6 +21,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/blog-posts', ( req, res, next ) => {
+    console.log("getting");
 	BlogList.get()
 		.then( blogs => {
 			return res.status( 200 ).json( blogs );
