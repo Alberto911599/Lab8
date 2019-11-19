@@ -41,6 +41,7 @@ app.post('/api/addPost', jsonParser, (req, res) => {
     let author = req.body.author;
     let content = req.body.content;
     let publishDate = req.body.publishDate;
+    let id = req.body.id;
      console.log(title);
      console.log(content);
      console.log(id);
