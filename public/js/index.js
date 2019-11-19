@@ -158,7 +158,7 @@ function updateById(tempId, updBlog){
     console.log(tempId);
     console.log(updBlog);
     $.ajax({
-        url:(url + '/' + tempId), //url/endpointToAPI,
+        url:(url + '/blog-posts/' + tempId), //url/endpointToAPI,
         type: "PUT", 
         data: JSON.stringify(updBlog),
         contentType: "application/json; charset=utf-8",
