@@ -38,8 +38,8 @@ function init(){
         e.preventDefault();
         newPost = {
             title : $("#tileInput").val(),
-            content : $("#contentInput").val(),
             author :  $("#authorInput").val(),
+            content : $("#contentInput").val(),
             publishDate : $("#publishDateInput").val(),
             id : $("#idInput").val()
         };
@@ -48,11 +48,11 @@ function init(){
     $("#btnUpdPost").on("click", function(e){
         e.preventDefault();
         updPost = {
-            id : $("#idInput").val(),
             title : $("#tileInput").val(),
             content : $("#contentInput").val(),
             author :  $("#authorInput").val(),
-            publishDate : $("#publishDateInput").val()
+            publishDate : $("#publishDateInput").val(),
+            id : $("#idInput").val()
         };
         updateById($("#idInput").val(), updPost);
     });
