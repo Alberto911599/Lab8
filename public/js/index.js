@@ -1,5 +1,4 @@
-let url = 'https://fierce-mountain-90125.herokuapp.com/blog-posts';
-
+let url = 'https://fierce-mountain-90125.herokuapp.com/api';
     // let settings = {
     //     method: 'GET'
     // };
@@ -74,7 +73,7 @@ function init(){
 function getAllBlogs(){
     console.log("get all blogs");
     $.ajax({
-        url:(url), //url/endpointToAPI,
+        url:(url + "/blog-posts"), //url/endpointToAPI,
         method: "GET", 
         data: {}, //Info sent to the API
         dataType : "json", //Returned type od the response
@@ -127,7 +126,7 @@ function getBlogsByAuthor(author){
 function postNewBlog(newBlog){
     console.log(newBlog);
     $.ajax({
-        url:(url), //url/endpointToAPI,
+        url:(url + "/addPost"), //url/endpointToAPI,
         type: "POST", 
         data: JSON.stringify(newBlog),
         contentType: "application/json; charset=utf-8",
