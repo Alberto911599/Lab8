@@ -5,7 +5,7 @@ let blogSchema = mongoose.Schema({
     title : {type : String},
     author : {type : String},
     content : {type : String},
-    publishDate : {type : Date},
+    publishDate : {type : String},
     id : {type : Number, required : true}
 });
 

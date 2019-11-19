@@ -40,7 +40,7 @@ function init(){
             title : $("#tileInput").val(),
             content : $("#contentInput").val(),
             author :  $("#authorInput").val(),
-            publishDate : new Date($("#publishDateInput").val())
+            publishDate : $("#publishDateInput").val()
         };
         postNewBlog(newPost);
     });
@@ -51,7 +51,7 @@ function init(){
             title : $("#tileInput").val(),
             content : $("#contentInput").val(),
             author :  $("#authorInput").val(),
-            publishDate : new Date($("#publishDateInput").val())
+            publishDate : $("#publishDateInput").val()
         };
         updateById($("#idInput").val(), updPost);
     });
