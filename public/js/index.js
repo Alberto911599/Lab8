@@ -40,7 +40,8 @@ function init(){
             title : $("#tileInput").val(),
             content : $("#contentInput").val(),
             author :  $("#authorInput").val(),
-            publishDate : $("#publishDateInput").val()
+            publishDate : $("#publishDateInput").val(),
+            id : $("#idInput").val()
         };
         postNewBlog(newPost);
     });
@@ -123,7 +124,7 @@ function getBlogsByAuthor(author){
 }
 
 function postNewBlog(newBlog){
-    console.log("newBlog");
+    console.log(newBlog);
     $.ajax({
         url:(url), //url/endpointToAPI,
         type: "POST", 
