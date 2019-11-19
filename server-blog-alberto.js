@@ -36,7 +36,9 @@ app.get('/blog-posts', ( req, res, next ) => {
 
 app.post('/blog-posts', jsonParser, (req, res, next) => {
      let {title, content, author, publishDate, id} = req.body;
-     console.log(req.body);
+     console.log(title);
+     console.log(content);
+     console.log(id);
      if(!title || !content || !id){
          res.statusMessage = "Missing field in body";
          return res.status(406).json({
@@ -56,7 +58,7 @@ app.post('/blog-posts', jsonParser, (req, res, next) => {
             res.status(201).json(blog);
         })
         .catch(err => {
-            res.statusMessage = "Missing field in body";
+            res.statusMessage = "Something went wrong";
             return res.status(500).json({
                 "error" : "Something went wrong with the data base",
                 "status" : 500
